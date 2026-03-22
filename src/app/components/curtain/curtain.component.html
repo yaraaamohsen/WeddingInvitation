@@ -1,0 +1,38 @@
+<section
+  class="curtain position-relative vh-100 w-100 overflow-hidden"
+  (click)="startExperience()"
+>
+
+  <!-- ① Static closed-curtain image — shown before video plays -->
+  <img
+    src="assets/curtain-closed.jpg"
+    alt=""
+    class="curtain__img position-absolute top-0 start-0 w-100 h-100"
+    [class.curtain__img--hidden]="isPlaying()"
+  />
+
+  <!-- ② Opening video — plays on tap, then emits curtainDone when ended -->
+  <video
+    #curtainVideo
+    src="assets/curtain-video.mp4"
+    class="curtain__video position-absolute top-0 start-0 w-100 h-100"
+    [class.curtain__video--visible]="isPlaying()"
+    playsinline
+    preload="auto"
+    muted
+  ></video>
+
+  <!-- ③ "Tap to begin" prompt — fades out when video starts -->
+  @if (!isPlaying()) {
+    <div class="curtain__prompt position-absolute bottom-0 start-0 w-100
+                d-flex flex-column align-items-center pb-5
+                animate__animated animate__fadeInUp animate__infinite animate__slow">
+      <p class="text-uppercase mb-2 curtain__prompt-text">Tap to begin</p>
+      <svg width="24" height="24" viewBox="0 0 24 24"
+           fill="none" stroke="#5C2018" stroke-width="1.5">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  }
+
+</section>

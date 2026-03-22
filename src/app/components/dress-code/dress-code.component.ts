@@ -1,0 +1,49 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-dress-code',
+  standalone: true,
+  template: `
+    <section
+      class="bg-white d-flex flex-column align-items-center py-5 px-4 text-center"
+    >
+      <h2
+        class="text-uppercase fw-bold mb-4 animate__animated animate__fadeInUp"
+        style="font-size:clamp(36px,8vw,56px); letter-spacing:.1em; color:var(--color-primary); font-family:var(--font-sans);"
+      >
+        Dress Code
+      </h2>
+
+      <!-- Replace src with assets/dresscode-illustration.png -->
+      <img
+        src="assets/dresscode-illustration.png"
+        alt="Dress Code"
+        class="mb-4 animate__animated animate__fadeInUp"
+        style="max-width:280px; width:100%;"
+      />
+
+      <p
+        class="mb-4 animate__animated animate__fadeInUp"
+        style="max-width:560px; font-size:15px; line-height:1.8; color:var(--color-primary);"
+      >
+        We invite you to dress elegantly and formally to celebrate this special
+        day with us.
+      </p>
+
+      <p
+        class="text-uppercase fw-bold mb-3 animate__animated animate__fadeInUp"
+        style="font-size:clamp(24px,5vw,36px); letter-spacing:.1em; color:var(--color-primary); font-family:var(--font-sans);"
+      >
+        Formal Attire
+      </p>
+
+      <p
+        class="font-serif fst-italic animate__animated animate__fadeInUp"
+        style="font-size:22px; color:var(--color-primary);"
+      >
+        Please avoid wearing white
+      </p>
+    </section>
+  `,
+})
+export class DressCodeComponent {}

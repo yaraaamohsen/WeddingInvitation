@@ -1,0 +1,58 @@
+// ── Background image ─────────────────────────────────────────────────
+.hero__bg {
+  object-fit: cover;
+  object-position: center;
+}
+
+// ── Names block ──────────────────────────────────────────────────────
+.hero__names {
+  max-width: 55%;
+
+  @media (max-width: 576px) { max-width: 80%; }
+}
+
+.hero__eyebrow {
+  font-family:    var(--font-sans);
+  font-size:      10px;
+  letter-spacing: .15em;
+  color:          var(--color-primary);
+  line-height:    1.8;
+}
+
+.hero__name {
+  font-size: clamp(52px, 12vw, 80px);
+  color:     var(--color-primary);
+}
+
+.hero__ampersand {
+  font-size: clamp(28px, 6vw, 40px);
+  color:     var(--color-primary);
+  margin:    4px 0;
+}
+
+// ── Body text ────────────────────────────────────────────────────────
+.hero__body-wrap {
+  bottom: 9rem;   // sits above the scroll arrow
+}
+
+.hero__body {
+  font-family:    var(--font-sans);
+  font-size:      11px;
+  letter-spacing: .12em;
+  line-height:    1.9;
+  color:          var(--color-primary);
+  max-width:      65%;
+
+  @media (max-width: 576px) { max-width: 90%; }
+}
+
+// ── Scroll indicator ─────────────────────────────────────────────────
+.hero__scroll-label {
+  font-family:    var(--font-sans);
+  font-size:      10px;
+  letter-spacing: .2em;
+  color:          var(--color-primary);
+}
+
+// Slow down the infinite bounce so it feels like a gentle nudge
+.animate__slow { animation-duration: 2.5s !important; }

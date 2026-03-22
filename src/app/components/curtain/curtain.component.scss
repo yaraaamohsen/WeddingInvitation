@@ -1,0 +1,42 @@
+.curtain {
+  cursor: pointer;
+  background: #1a0000; // dark fallback while assets load
+}
+
+// ── Background image ──────────────────────────────────────────────────
+.curtain__img {
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+
+  &--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+// ── Opening video ─────────────────────────────────────────────────────
+.curtain__video {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;               // invisible until playing
+  z-index: 2;
+  transition: opacity 0.3s ease;
+
+  &--visible {
+    opacity: 1;
+  }
+}
+
+// ── Tap prompt ────────────────────────────────────────────────────────
+.curtain__prompt {
+  z-index: 3;
+}
+
+.curtain__prompt-text {
+  font-family:    var(--font-sans);
+  font-size:      10px;
+  letter-spacing: .2em;
+  color:          var(--color-primary);
+}   

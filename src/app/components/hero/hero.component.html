@@ -1,0 +1,63 @@
+<section class="hero position-relative vh-100 w-100 overflow-hidden">
+  <!-- ① Background curtain image -->
+  <img
+    src="assets/curtain-open.jpg"
+    alt=""
+    class="hero__bg position-absolute top-0 start-0 w-100 h-100"
+  />
+
+  <!-- ② Couple names — vertically centred -->
+  <div
+    class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+  >
+    <div class="text-center px-4 animate__animated animate__fadeIn hero__names">
+      <p class="hero__eyebrow text-uppercase mb-4">
+        You are cordially invited to celebrate the wedding of
+      </p>
+
+      <h1 class="hero__name font-serif fst-italic fw-normal mb-0 lh-1">
+        {{ config().groomName }}
+      </h1>
+
+      <span class="hero__ampersand font-serif fst-italic d-block"> &amp; </span>
+
+      <h1 class="hero__name font-serif fst-italic fw-normal mb-0 lh-1">
+        {{ config().brideName }}
+      </h1>
+    </div>
+  </div>
+
+  <!-- ③ Invitation body text — near the bottom -->
+  <div
+    class="position-absolute w-100 d-flex justify-content-center px-4 hero__body-wrap"
+  >
+    <p
+      class="hero__body text-uppercase text-center animate__animated animate__fadeIn animate__delay-1s"
+    >
+      We would like to invite you to celebrate with us the most special day of
+      our lives. It would be an honor to have you present at this important
+      moment.
+    </p>
+  </div>
+
+  <!-- ④ Scroll arrow -->
+  <div
+    class="position-absolute bottom-0 start-0 w-100 d-flex justify-content-center pb-4 hero__scroll"
+  >
+    <div
+      class="d-flex flex-column align-items-center animate__animated animate__fadeInUp animate__infinite animate__slow"
+    >
+      <p class="hero__scroll-label text-uppercase mb-2">Scroll</p>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#5C2018"
+        stroke-width="1.5"
+      >
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+    </div>
+  </div>
+</section>

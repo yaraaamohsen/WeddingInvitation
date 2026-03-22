@@ -1,0 +1,34 @@
+<app-confetti [active]="showConfetti()" />
+
+<!-- 1. Hero — curtain image bg + names -->
+<app-hero [config]="config()" />
+
+<!-- 2. Scratch to reveal date -->
+<app-scratch-reveal
+  [dateParts]="config().dateParts"
+  (allScratched)="onAllScratched()"
+/>
+
+<!-- 3. Countdown timer -->
+<app-countdown [weddingDate]="config().weddingDate" />
+
+<!-- 4. Venue -->
+<app-venue [config]="config()" />
+
+<!-- 5. Menu -->
+<app-menu [items]="menuItems" />
+
+<!-- 6. Dress Code -->
+<app-dress-code />
+
+<!-- 7. Gifts -->
+<app-gifts [config]="config()" />
+
+<!-- 8. Transport -->
+<app-transport [config]="config()" />
+
+<!-- 9. RSVP -->
+<app-rsvp />
+
+<!-- 10. Thank You -->
+<app-thank-you [groomName]="config().groomName" [brideName]="config().brideName" />
