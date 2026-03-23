@@ -26,7 +26,7 @@ import { ConfettiComponent } from '../confetti/confetti.component';
     TransportComponent,
     RsvpComponent,
     ThankYouComponent,
-    ConfettiComponent
+    ConfettiComponent,
   ],
   templateUrl: './invitation.component.html',
   styleUrls: ['./invitation.component.scss'],
@@ -35,6 +35,7 @@ export class InvitationComponent {
   config = input.required<WeddingConfig>();
 
   showConfetti = signal(false);
+  showRest = signal(false);
 
   menuItems: MenuItem[] = [
     {
@@ -61,6 +62,7 @@ export class InvitationComponent {
 
   onAllScratched(): void {
     this.showConfetti.set(true);
+    this.showRest.set(true);
     setTimeout(() => this.showConfetti.set(false), 3500);
   }
 }

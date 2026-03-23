@@ -1,21 +1,19 @@
 @if (active() && pieces.length) {
   <div class="confetti-host" aria-hidden="true">
-
     @for (p of pieces; track p.id) {
       <div
         class="piece"
         [class.circle]="p.isCircle"
         [ngStyle]="{
-          left:                p.x + '%',
-          width:               p.size   + 'px',
-          height:              p.height + 'px',
-          background:          p.color,
-          transform:          'rotate(' + p.rotate + 'deg)',
-          animationDuration:   p.dur   + 's',
-          animationDelay:      p.delay + 's'
+          left: p.x + '%',
+          width: p.size + 'px',
+          height: p.height + 'px',
+          background: p.color,
+          transform: 'rotate(' + p.rotate + 'deg)',
+          animationDuration: p.dur + 's',
+          animationDelay: p.delay + 's',
         }"
       ></div>
     }
-
   </div>
 }

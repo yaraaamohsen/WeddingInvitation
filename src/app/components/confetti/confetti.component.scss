@@ -1,14 +1,14 @@
 .confetti-host {
   position: fixed;
   inset: 0;
-  pointer-events: none;  // never blocks clicks beneath it
+  pointer-events: none; // never blocks clicks beneath it
   overflow: hidden;
   z-index: 9999;
 }
 
 .piece {
   position: absolute;
-  top: -20px;           // start just above the viewport
+  top: -20px; // start just above the viewport
   border-radius: 2px;
   will-change: transform, opacity;
   animation: confetti-fall linear forwards;
@@ -28,7 +28,7 @@
     opacity: 1;
   }
   100% {
-    top: 110vh;           // fall fully off screen
+    top: 110vh; // fall fully off screen
     opacity: 0;
     transform: rotate(720deg);
   }

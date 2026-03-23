@@ -4,9 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-dress-code',
   standalone: true,
   template: `
-    <section
-      class="bg-white d-flex flex-column align-items-center py-5 px-4 text-center"
-    >
+    <section class="bg-white d-flex flex-column align-items-center py-5 px-4 text-center">
       <h2
         class="text-uppercase fw-bold mb-4 animate__animated animate__fadeInUp"
         style="font-size:clamp(36px,8vw,56px); letter-spacing:.1em; color:var(--color-primary); font-family:var(--font-sans);"
@@ -22,12 +20,8 @@ import { Component } from '@angular/core';
         style="max-width:280px; width:100%;"
       />
 
-      <p
-        class="mb-4 animate__animated animate__fadeInUp"
-        style="max-width:560px; font-size:15px; line-height:1.8; color:var(--color-primary);"
-      >
-        We invite you to dress elegantly and formally to celebrate this special
-        day with us.
+      <p class="mb-4 animate__animated animate__fadeInUp" style="max-width:560px; font-size:15px; line-height:1.8; color:var(--color-primary);">
+        We invite you to dress elegantly and formally to celebrate this special day with us.
       </p>
 
       <p
@@ -37,10 +31,7 @@ import { Component } from '@angular/core';
         Formal Attire
       </p>
 
-      <p
-        class="font-serif fst-italic animate__animated animate__fadeInUp"
-        style="font-size:22px; color:var(--color-primary);"
-      >
+      <p class="font-serif fst-italic animate__animated animate__fadeInUp" style="font-size:22px; color:var(--color-primary);">
         Please avoid wearing white
       </p>
     </section>

@@ -1,17 +1,12 @@
-// ── curtain.component.ts ─────────────────────────────────────────────
-import {
-  Component, output, signal,
-  AfterViewInit, ViewChild, ElementRef
-} from '@angular/core';
+import { Component, output, signal, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-curtain',
   standalone: true,
   templateUrl: './curtain.component.html',
-  styleUrl:    './curtain.component.scss',
+  styleUrl: './curtain.component.scss',
 })
 export class CurtainComponent implements AfterViewInit {
-
   /** Emitted when the curtain animation is done → app switches to hero */
   curtainDone = output<void>();
 
@@ -40,5 +35,10 @@ export class CurtainComponent implements AfterViewInit {
     if (this.isPlaying()) return;
     this.isPlaying.set(true);
     this.videoRef.nativeElement.play();
+
+    // Play background music
+    const audio = new Audio('assets/intro-music.mp3');
+    audio.loop = true;
+    audio.play().catch((e) => console.error('Audio play failed:', e));
   }
 }

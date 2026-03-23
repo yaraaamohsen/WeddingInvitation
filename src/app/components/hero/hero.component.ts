@@ -6,7 +6,7 @@ import { WeddingConfig } from '../../models/wedding';
   selector: 'app-hero',
   standalone: true,
   templateUrl: './hero.component.html',
-  styleUrl:    './hero.component.scss',
+  styleUrl: './hero.component.scss',
 })
 export class HeroComponent {
   config = input.required<WeddingConfig>();

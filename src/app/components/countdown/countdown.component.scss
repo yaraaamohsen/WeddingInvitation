@@ -1,19 +1,19 @@
 .countdown-section {
-  min-height: 40vh;   // doesn't need full screen height — sits between sections
+  min-height: 40vh; // doesn't need full screen height — sits between sections
 }
 
 // ── Individual tile box ──────────────────────────────────────────────
 .tile-box {
-  width:         72px;
-  height:        72px;
-  border:        1.5px solid var(--color-primary);
+  width: 72px;
+  height: 72px;
+  border: 1.5px solid var(--color-primary);
   border-radius: 8px;
 
   // Subtle pulse so the seconds feel "alive" — slowed down via global styles
   animation: pulse 2s ease-in-out infinite;
 
   @media (min-width: 768px) {
-    width:  84px;
+    width: 84px;
     height: 84px;
   }
 }
@@ -25,13 +25,20 @@
 }
 
 .tile-label {
-  font-size:      10px;
-  letter-spacing: .15em;
-  color:          var(--color-primary);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
 }
 
 // ── Heartbeat pulse (only applied to tile-box) ───────────────────────
 @keyframes pulse {
-  0%, 100% { transform: scale(1);    box-shadow: none; }
-  50%       { transform: scale(1.03); box-shadow: 0 0 0 3px rgba(92, 32, 24, .08); }
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 3px rgba(92, 32, 24, 0.08);
+  }
 }

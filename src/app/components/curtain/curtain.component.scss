@@ -1,14 +1,14 @@
 .curtain {
   cursor: pointer;
-  background: #1a0000; // dark fallback while assets load
+  background: #3a0a00;
 }
 
 // ── Background image ──────────────────────────────────────────────────
 .curtain__img {
   object-fit: cover;
   object-position: center;
-  transition: opacity 0.3s ease;
   z-index: 1;
+  transition: opacity 0.4s ease;
 
   &--hidden {
     opacity: 0;
@@ -20,23 +20,83 @@
 .curtain__video {
   object-fit: cover;
   object-position: center;
-  opacity: 0;               // invisible until playing
+  opacity: 0;
   z-index: 2;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
 
   &--visible {
     opacity: 1;
   }
 }
 
-// ── Tap prompt ────────────────────────────────────────────────────────
-.curtain__prompt {
-  z-index: 3;
+// ── Couple names (on top of both image & video) ───────────────────────
+.curtain__names {
+  z-index: 3; // above image (1) and video (2)
+  pointer-events: none;
 }
 
-.curtain__prompt-text {
-  font-family:    var(--font-sans);
-  font-size:      10px;
-  letter-spacing: .2em;
-  color:          var(--color-primary);
-}   
+.curtain__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  line-height: 1.8;
+}
+
+.curtain__name {
+  font-size: clamp(52px, 12vw, 80px);
+  color: var(--color-primary);
+}
+
+.curtain__ampersand {
+  font-size: clamp(28px, 6vw, 40px);
+  color: var(--color-primary);
+  margin: 4px 0;
+}
+
+// ── Hint overlay ──────────────────────────────────────────────────────
+.curtain__hint {
+  z-index: 4; // above names
+  pointer-events: none;
+}
+
+.hint-ring {
+  width: 52px;
+  height: 52px;
+}
+
+.hint-ring__outer {
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(250, 230, 200, 0.45);
+  animation: ring-pulse 2s ease-in-out infinite;
+}
+
+.hint-ring__inner {
+  width: 40px;
+  height: 40px;
+  background: rgba(250, 230, 200, 0.15);
+  border: 1px solid rgba(250, 230, 200, 0.35);
+  position: relative;
+  z-index: 1;
+}
+
+.hint-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: rgba(250, 230, 200, 0.75);
+  margin: 0;
+}
+
+@keyframes ring-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.45);
+    opacity: 1;
+  }
+}

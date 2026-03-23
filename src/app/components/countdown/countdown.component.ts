@@ -1,11 +1,4 @@
-import {
-  Component,
-  input,
-  OnInit,
-  OnDestroy,
-  signal,
-  computed,
-} from '@angular/core';
+import { Component, input, OnInit, OnDestroy, signal, computed } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { CountdownTime } from '../../models/wedding';
 
@@ -17,7 +10,6 @@ interface Tile {
 @Component({
   selector: 'app-countdown',
   standalone: true,
-  imports: [NgFor],
   templateUrl: './countdown.component.html',
   styleUrl: './countdown.component.scss',
 })

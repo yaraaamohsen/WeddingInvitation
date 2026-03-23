@@ -1,12 +1,7 @@
-<section class="countdown-section bg-white d-flex flex-column align-items-center
-                justify-content-center py-5 px-4 text-center">
-
+<section class="countdown-section bg-white d-flex flex-column align-items-center justify-content-center py-5 px-4 text-center">
   <!-- Title -->
   <div class="mb-4 animate__animated animate__fadeInDown">
-    <h2 class="font-serif fst-italic fw-normal"
-        style="font-size: clamp(36px, 8vw, 52px); color: var(--color-primary);">
-      Countdown
-    </h2>
+    <h2 class="font-serif fst-italic fw-normal" style="font-size: clamp(36px, 8vw, 52px); color: var(--color-primary)">Countdown</h2>
   </div>
 
   <!-- Tiles -->
@@ -14,7 +9,6 @@
     <div class="d-flex gap-3 gap-md-4 justify-content-center mb-3">
       @for (tile of tiles; track tile.key) {
         <div class="d-flex flex-column align-items-center animate__animated animate__fadeInUp">
-
           <div class="tile-box d-flex align-items-center justify-content-center mb-2">
             <span class="font-serif fw-bold tile-value">
               {{ pad(time()[tile.key]) }}
@@ -24,23 +18,18 @@
           <span class="tile-label text-uppercase">
             {{ tile.label }}
           </span>
-
         </div>
       }
     </div>
 
     <!-- "until the big day" -->
-    <p class="fst-italic mt-2 animate__animated animate__fadeIn animate__delay-1s"
-       style="font-size: 14px; color: var(--color-primary);">
+    <p class="fst-italic mt-2 animate__animated animate__fadeIn animate__delay-1s" style="font-size: 14px; color: var(--color-primary)">
       until the big day
     </p>
-
   } @else {
     <!-- Date has passed — show a celebratory message instead -->
-    <p class="font-serif fst-italic animate__animated animate__bounceIn"
-       style="font-size: clamp(24px, 5vw, 36px); color: var(--color-primary);">
+    <p class="font-serif fst-italic animate__animated animate__bounceIn" style="font-size: clamp(24px, 5vw, 36px); color: var(--color-primary)">
       Today is the big day! 🎉
     </p>
   }
-
 </section>

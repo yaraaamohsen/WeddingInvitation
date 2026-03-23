@@ -21,8 +21,8 @@ export class AppComponent {
   config: WeddingConfig = {
     groomName: 'Selim',
     brideName: 'Yara',
-    weddingDate: new Date('2027-09-10T00:00:00'),
-    dateParts: ['10', 'Sept', '2026'],
+    weddingDate: new Date('2026-06-10T00:00:00'),
+    dateParts: ['10', 'Jun', '2026'],
     venueName: 'Villa Medicea di Artimino',
     venueAddress: ['Via di Papa Leone X, 28'],
     venueCity: 'Artimino, Florencia',
