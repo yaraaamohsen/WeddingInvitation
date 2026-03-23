@@ -1,10 +1,8 @@
 <section class="scratch-section d-flex flex-column align-items-center justify-content-center py-5 px-4 text-center">
-  <!-- ① Hand / hint icon -->
+  <!-- Hand hint -->
   <div class="scratch-hint mb-3 animate__animated animate__fadeIn">
     <div class="hint-ring position-relative d-flex align-items-center justify-content-center mx-auto mb-3">
-      <!-- Animated outer ring -->
       <div class="hint-ring__outer position-absolute rounded-circle"></div>
-      <!-- Inner icon circle -->
       <div class="hint-ring__inner rounded-circle d-flex align-items-center justify-content-center">
         <svg
           width="18"
@@ -29,17 +27,17 @@
     <p class="hint-text">Scratch all three circles to continue</p>
   </div>
 
-  <!-- ② Title -->
+  <!-- Title -->
   <div class="mb-4 animate__animated animate__fadeInUp">
     <h2 class="font-serif fst-italic fw-normal mb-2" style="font-size: clamp(36px, 8vw, 52px); color: var(--color-primary)">Reveal</h2>
     <p class="text-uppercase" style="font-size: 11px; letter-spacing: 0.15em; color: var(--color-primary)">Scratch to discover the date</p>
   </div>
 
-  <!-- ③ Scratch circles -->
+  <!-- Scratch circles -->
   <div class="d-flex gap-4 gap-md-5 justify-content-center mb-4">
     @for (circle of circles(); track $index) {
       <div class="scratch-circle-wrap animate__animated animate__fadeInUp" [style.animation-delay]="$index * 0.15 + 's'">
-        <!-- Revealed label sits underneath the gold layer -->
+        <!-- Revealed label underneath -->
         <div
           class="scratch-circle__label rounded-circle d-flex align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100"
         >
@@ -48,7 +46,7 @@
           </span>
         </div>
 
-        <!-- Gold canvas — hidden via CSS transition once scratched -->
+        <!-- scratch-gold.png as overlay — erased via canvas on top -->
         <canvas
           #scratchCanvas
           width="150"
@@ -67,7 +65,6 @@
     }
   </div>
 
-  <!-- ④ Celebration message — appears when all circles are scratched -->
   @if (scratchedCount() === dateParts().length) {
     <p class="font-serif fst-italic mt-2 animate__animated animate__bounceIn" style="font-size: clamp(20px, 4vw, 28px); color: var(--color-primary)">
       We're getting married! 🎉

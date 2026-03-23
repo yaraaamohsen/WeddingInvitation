@@ -7,16 +7,12 @@ import { Phase, WeddingConfig } from './models/wedding';
   selector: 'app-root',
   standalone: true,
   imports: [CurtainComponent, InvitationComponent],
-  template: `
-    @if (phase() === 'curtain') {
-      <app-curtain (curtainDone)="phase.set('invitation')" />
-    } @else {
-      <app-invitation [config]="config" />
-    }
-  `,
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   phase = signal<Phase>('curtain');
+  namesVisible = signal(false);
 
   config: WeddingConfig = {
     groomName: 'Selim',
@@ -29,8 +25,16 @@ export class AppComponent {
     busPickup: 'Piazza della Signoria',
     busPickupTime: '16:00h',
     busReturnTime: '02:00h',
-    bankHolder: 'SELIM & YARA',
+    bankHolder: 'Selim & Yara',
     bankIban: 'ES00 0000 0000 0000 0000 0000',
     bankReference: 'Selim & Yara Wedding',
   };
+
+  onVideoStarted(): void {
+    this.namesVisible.set(true);
+  }
+
+  onCurtainDone(): void {
+    this.phase.set('invitation');
+  }
 }

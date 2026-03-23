@@ -1,4 +1,3 @@
-// ── hero.component.ts ────────────────────────────────────────────────
 import { Component, input } from '@angular/core';
 import { WeddingConfig } from '../../models/wedding';
 

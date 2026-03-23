@@ -1,4 +1,8 @@
-<section class="curtain position-relative vh-100 w-100 overflow-hidden" (click)="startExperience()">
+<section
+  class="curtain position-relative vh-100 w-100 overflow-hidden"
+  (click)="startExperience()"
+>
+
   <!-- ① Static closed-curtain image -->
   <img
     src="assets/curtain-closed.jpg"
@@ -18,39 +22,30 @@
     muted
   ></video>
 
-  <!-- ③ Centered hand prompt — disappears when video starts -->
+  <!-- ③ Hand hint — disappears on click -->
   @if (!isPlaying()) {
-    <div
-      class="curtain__hint position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center animate__animated animate__fadeIn"
-    >
-      <!-- Pulsing ring + hand icon -->
+    <div class="curtain__hint position-absolute top-0 start-0 w-100 h-100
+                d-flex flex-column align-items-center justify-content-center
+                animate__animated animate__fadeIn">
+
       <div class="hint-ring position-relative d-flex align-items-center justify-content-center mb-2">
         <div class="hint-ring__outer position-absolute rounded-circle"></div>
         <div class="hint-ring__inner rounded-circle d-flex align-items-center justify-content-center">
-          <!-- Hand (pointer/tap) icon — matches screenshot -->
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="rgba(92,32,24,0.7)"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v0" />
-            <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v6" />
-            <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8" />
-            <path
-              d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34
-                     l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"
-            />
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="rgba(250,230,200,0.8)" stroke-width="1.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v0"/>
+            <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v6"/>
+            <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/>
+            <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34
+                     l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
           </svg>
         </div>
       </div>
 
-      <!-- "Tap to continue" label — matches screenshot -->
       <p class="hint-label">Tap to continue</p>
+
     </div>
   }
+
 </section>
