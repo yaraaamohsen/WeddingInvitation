@@ -5,10 +5,6 @@ import { Component, input } from '@angular/core';
   standalone: true,
   template: `
     <section class="bg-white d-flex flex-column align-items-center justify-content-center py-5 px-4">
-      <!--
-    The original wraps the card in a deep-red rounded container
-    and uses clip-path to create a stamp/ticket edge on the inner white card.
-  -->
       <div
         class="position-relative rounded-4 p-3 animate__animated animate__fadeInUp"
         style="background:var(--color-primary); max-width:400px; width:100%;"
@@ -32,7 +28,6 @@ import { Component, input } from '@angular/core';
   `,
   styles: [
     `
-      /* Stamp / ticket jagged edge — mirrors the original clip-path */
       .thank-you-card {
         clip-path: polygon(
           0% 8%,
