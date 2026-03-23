@@ -97,6 +97,13 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular-devkit/build-angular:deploy",
+          "options": {
+            "outputPath": "dist/wedding-invitation/browser/",
+            "baseHref": "/WeddingInvitation/"
+          }
         }
       }
     }
