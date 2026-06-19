@@ -41,4 +41,18 @@
       {{config().weddingDate | date:'fullDate'}}
     </p>
   </div>
+
+  <div class="d-flex align-items-end justify-content-center mt-4 mb-3">
+      <img width="20px" height="20px" src="assets/location-pin.svg" alt="Google Maps Icon" />
+    <a
+      class="text-decoration-none animate__animated animate__fadeInUp"
+      style="font-size: 14px; color: var(--color-primary); letter-spacing: 1px; padding: 0 0.25rem"
+      href="{{ config().locationUrl }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+     Get Directions
+    </a>
+
+  </div>
 </section>

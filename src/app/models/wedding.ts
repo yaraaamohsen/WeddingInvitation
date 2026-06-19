@@ -8,6 +8,7 @@ export interface WeddingConfig {
   venueName: string;
   venueAddress: string[];
   venueCity: string;
+  locationUrl?: string;
 }
 
 export interface CountdownTime {

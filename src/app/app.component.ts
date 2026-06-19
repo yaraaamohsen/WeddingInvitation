@@ -21,6 +21,7 @@ export class AppComponent {
     venueName: 'NIRENA HALL',
     venueAddress: ['Police Club, Salah Salem'],
     venueCity: 'Salah Salem, Cairo',
+    locationUrl: 'https://maps.app.goo.gl/Vv86E7uWkbontSQp8?g_st=ic',
   };
 
   onCurtainDone(): void {
