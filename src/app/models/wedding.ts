@@ -8,11 +8,6 @@ export interface WeddingConfig {
   venueName: string;
   venueAddress: string[];
   venueCity: string;
-  busPickup: string;
-  busPickupTime: string;
-  busReturnTime: string;
-  bankHolder: string;
-  bankReference: string;
 }
 
 export interface CountdownTime {

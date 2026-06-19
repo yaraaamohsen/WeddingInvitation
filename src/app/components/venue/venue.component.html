@@ -1,42 +1,44 @@
-<section class="bg-white d-flex flex-column align-items-center py-5 px-4 text-center">
-  <p class="text-uppercase mb-4 animate__animated animate__fadeInUp" style="font-size: 11px; letter-spacing: 0.15em; color: var(--color-primary)">
+<section class="content-section-bg d-flex flex-column align-items-center py-5 px-4 text-center">
+  <p class="text-uppercase mb-4 animate__animated animate__fadeInUp ls-2" style="font-size: 11px; color: var(--color-primary)">
     The celebration will take place at
   </p>
 
-  <!-- Venue illustration — replace src with your actual image -->
-  <div class="position-relative w-100 mb-4" style="max-width: 672px">
-    <img src="assets/venue-illustration.png" alt="Venue" class="w-100 h-auto animate__animated animate__fadeInUp" />
-    <!-- Badge -->
-    <div class="position-absolute top-0 end-0 rounded-pill px-3 py-2 shadow" style="background: var(--color-primary); max-width: 140px">
-      <span style="font-size: 9px; color: #fff; letter-spacing: 0.05em; display: block; line-height: 1.4">
-        Extra: custom illustration of your venue
-      </span>
+  <!-- Stylized Venue Info (Replaced Image) -->
+  <div class="venue-ornament mb-5 animate__animated animate__fadeInUp">
+    <div class="ornament-line"></div>
+    <div class="ornament-icon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1">
+        <path d="M3 21h18M3 7l9-4 9 4M5 7v14M19 7v14M10 21v-7a2 2 0 0 1 4 0v7" />
+      </svg>
     </div>
+    <div class="ornament-line"></div>
   </div>
 
   <h2
-    class="fw-bold mb-2 animate__animated animate__fadeInUp"
-    style="font-size: clamp(24px, 5vw, 48px); color: var(--color-primary); font-family: var(--font-sans)"
+    class="fw-bold mb-3 animate__animated animate__fadeInUp font-serif"
+    style="font-size: clamp(32px, 6vw, 56px); color: var(--color-primary);"
   >
     {{ config().venueName }}
   </h2>
 
   @for (line of config().venueAddress; track $index) {
     <p
-      class="text-uppercase mb-0 animate__animated animate__fadeInUp"
-      style="font-size: 11px; letter-spacing: 0.2em; color: var(--color-primary); line-height: 2"
+      class="text-uppercase mb-0 animate__animated animate__fadeInUp ls-2"
+      style="font-size: 12px; color: var(--color-primary); line-height: 2"
     >
       {{ line }}
     </p>
   }
   <p
-    class="text-uppercase mb-4 animate__animated animate__fadeInUp"
-    style="font-size: 11px; letter-spacing: 0.2em; color: var(--color-primary); line-height: 2"
+    class="text-uppercase mb-5 animate__animated animate__fadeInUp ls-2"
+    style="font-size: 12px; color: var(--color-primary); line-height: 2"
   >
     {{ config().venueCity }}
   </p>
 
-  <p class="mb-2 animate__animated animate__fadeInUp" style="font-size: 22px; color: var(--color-primary); font-family: var(--font-sans)">
-    {{config().weddingDate | date}}
-  </p>
+  <div class="date-badge mb-2 animate__animated animate__fadeInUp">
+    <p class="font-serif fst-italic mb-0" style="font-size: 28px; color: var(--color-primary)">
+      {{config().weddingDate | date:'fullDate'}}
+    </p>
+  </div>
 </section>

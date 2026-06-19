@@ -4,7 +4,7 @@ import { Component, input } from '@angular/core';
   selector: 'app-thank-you',
   standalone: true,
   template: `
-    <section class="bg-white d-flex flex-column align-items-center justify-content-center py-5 px-4">
+    <section class="content-section-bg d-flex flex-column align-items-center justify-content-center py-5 px-4 min-vh-100">
       <div
         class="position-relative rounded-4 p-3 animate__animated animate__fadeInUp"
         style="background:var(--color-primary); max-width:400px; width:100%;"

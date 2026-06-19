@@ -5,7 +5,6 @@ import { CountdownComponent } from '../countdown/countdown.component';
 import { WeddingConfig } from '../../models/wedding';
 import { VenueComponent } from '../venue/venue.component';
 import { DressCodeComponent } from '../dress-code/dress-code.component';
-import { TransportComponent } from '../transport/transport.component';
 import { ThankYouComponent } from '../thankyou/thankyou.component';
 import { ConfettiComponent } from '../confetti/confetti.component';
 
@@ -18,7 +17,6 @@ import { ConfettiComponent } from '../confetti/confetti.component';
     CountdownComponent,
     VenueComponent,
     DressCodeComponent,
-    TransportComponent,
     ThankYouComponent,
     ConfettiComponent,
   ],

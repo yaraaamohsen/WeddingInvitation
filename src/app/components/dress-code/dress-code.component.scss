@@ -1,0 +1,31 @@
+.dress-code-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .visual-circle {
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      border-radius: 50%;
+    }
+  }
+}
+
+.attire-label {
+  padding: 10px 30px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  display: inline-block;
+}

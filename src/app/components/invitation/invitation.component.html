@@ -1,24 +1,19 @@
 <app-confetti [active]="showConfetti()" />
 
-<!-- 1. Hero — curtain image bg + names -->
+<!-- (1) Welcome Cinematic Overlay - Fixed at the top -->
 <app-hero [config]="config()" />
 
-<!-- 2. Scratch to reveal date -->
-<app-scratch-reveal [dateParts]="config().dateParts" (allScratched)="onAllScratched()" />
+<!-- (2) Scrollable Content Sections -->
+<!-- We add a Spacer so the Welcome text is seen first, then user scrolls past it -->
+<div class="scroll-container">
+  <div class="viewport-spacer"></div>
 
-@if (showRest()) {
-  <!-- 3. Countdown timer -->
-  <app-countdown [weddingDate]="config().weddingDate" />
+  <app-scratch-reveal [dateParts]="config().dateParts" (allScratched)="onAllScratched()" />
 
-  <!-- 4. Venue -->
-  <app-venue [config]="config()" />
-
-  <!-- 6. Dress Code -->
-  <app-dress-code />
-
-  <!-- 8. Transport -->
-  <app-transport [config]="config()" />
-
-  <!-- 10. Thank You -->
-  <app-thank-you [groomName]="config().groomName" [brideName]="config().brideName" />
-}
+  @if (showRest()) {
+    <app-countdown [weddingDate]="config().weddingDate" />
+    <app-venue [config]="config()" />
+    <app-dress-code />
+    <app-thank-you [groomName]="config().groomName" [brideName]="config().brideName" />
+  }
+</div>

@@ -1,38 +1,28 @@
 <section
-  class="curtain position-relative vh-100 w-100 overflow-hidden"
+  class="curtain position-fixed top-0 start-0 w-100 h-100 overflow-hidden"
   (click)="startExperience()"
 >
-
-  <!-- ① Static closed-curtain image -->
-  <img
-    src="assets/curtain-closed.jpg"
-    alt=""
-    class="curtain__img position-absolute top-0 start-0 w-100 h-100"
-    [class.curtain__img--hidden]="isPlaying()"
-  />
-
-  <!-- ② Opening video -->
+  <!-- Opening video - Persistent Background -->
   <video
     #curtainVideo
     src="assets/curtain-video.mp4"
-    class="curtain__video position-absolute top-0 start-0 w-100 h-100"
-    [class.curtain__video--visible]="isPlaying()"
+    class="curtain__video w-100 h-100"
     playsinline
     preload="auto"
     muted
   ></video>
 
-  <!-- ③ Hand hint — disappears on click -->
-  @if (!isPlaying()) {
+  <!-- Initial State Overlay -->
+  @if (curtainState() === 'idle') {
     <div class="curtain__hint position-absolute top-0 start-0 w-100 h-100
                 d-flex flex-column align-items-center justify-content-center
                 animate__animated animate__fadeIn">
 
-      <div class="hint-ring position-relative d-flex align-items-center justify-content-center mb-2">
+      <div class="hint-ring position-relative d-flex align-items-center justify-content-center mb-4">
         <div class="hint-ring__outer position-absolute rounded-circle"></div>
         <div class="hint-ring__inner rounded-circle d-flex align-items-center justify-content-center">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-               stroke="rgba(250,230,200,0.8)" stroke-width="1.5"
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+               stroke="rgba(250,230,200,0.9)" stroke-width="1.5"
                stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v0"/>
             <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v6"/>
@@ -44,8 +34,6 @@
       </div>
 
       <p class="hint-label">Tap to continue</p>
-
     </div>
   }
-
 </section>

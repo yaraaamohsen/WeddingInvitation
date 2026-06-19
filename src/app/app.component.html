@@ -1,25 +1,10 @@
-<div
-  class="app-names position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
-  [class.app-names--visible]="namesVisible()"
->
-  <div class="text-center px-4" style="max-width: 55%">
-    <p class="app-names__eyebrow text-uppercase mb-4">You are cordially invited to<br />celebrate the wedding of</p>
+<!-- (1) Video-Only Curtain System (Persistent Background) -->
+<app-curtain (curtainDone)="onCurtainDone()" />
 
-    <h1 class="app-names__name font-serif fst-italic fw-normal mb-0 lh-1">
-      {{ config.groomName }}
-    </h1>
-
-    <span class="app-names__ampersand font-serif fst-italic d-block">&amp;</span>
-
-    <h1 class="app-names__name font-serif fst-italic fw-normal mb-0 lh-1">
-      {{ config.brideName }}
-    </h1>
-  </div>
-</div>
-
-<!-- Phase content -->
-@if (phase() === "curtain") {
-  <app-curtain (videoStarted)="onVideoStarted()" (curtainDone)="onCurtainDone()" />
-} @else {
-  <app-invitation [config]="config" />
-}
+<!-- (2) Content Section - Scrolls Above the Video -->
+<main class="content-layer" [class.content-layer--active]="isCurtainDone()">
+  <!-- We only show InvitationComponent once the curtain has opened -->
+  @if (isCurtainDone()) {
+    <app-invitation [config]="config" />
+  }
+</main>

@@ -1,0 +1,27 @@
+.scroll-container {
+  position: relative;
+  z-index: 10; // Above Hero
+}
+
+.viewport-spacer {
+  height: 100vh;
+  pointer-events: none;
+}
+
+// Ensure subsequent sections have a background so they cover the hero as they scroll up
+// Unless the user wants them to be transparent.
+// "All content sections scroll above it"
+// Usually this means they have their own background.
+:host ::ng-deep {
+  app-scratch-reveal,
+  app-countdown,
+  app-venue,
+  app-dress-code,
+  app-transport,
+  app-thank-you {
+    display: block;
+    background: var(--color-beige); // Covers the background video/hero
+    position: relative;
+    z-index: 10;
+  }
+}

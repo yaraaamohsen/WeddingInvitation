@@ -1,99 +1,62 @@
 .curtain {
   cursor: pointer;
-  background: #3a0a00;
+  background: #000;
+  z-index: 0;
 }
 
-// ── Background image ──────────────────────────────────────────────────
-.curtain__img {
-  object-fit: cover;
-  object-position: center;
-  z-index: 1;
-  transition: opacity 0.4s ease;
-
-  &--hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-}
-
-// ── Opening video ─────────────────────────────────────────────────────
 .curtain__video {
   object-fit: cover;
   object-position: center;
-  opacity: 0;
-  z-index: 2;
-  transition: opacity 0.4s ease;
-
-  &--visible { opacity: 1; }
-}
-
-// ── Couple names ──────────────────────────────────────────────────────
-.curtain__names {
-  z-index: 3;
-  pointer-events: none;
-  opacity: 0;                          // hidden by default
-  transition: opacity 1s ease 0.6s;   // 0.6s delay — waits for video to start
-
-  &--visible {
-    opacity: 1;                        // fades in when isPlaying = true
-  }
-}
-
-.curtain__eyebrow {
-  font-family:    var(--font-sans);
-  font-size:      10px;
-  letter-spacing: .15em;
-  color:          var(--color-primary);
-  line-height:    1.8;
-}
-
-.curtain__name {
-  font-size: clamp(52px, 12vw, 80px);
-  color:     var(--color-primary);
-}
-
-.curtain__ampersand {
-  font-size: clamp(28px, 6vw, 40px);
-  color:     var(--color-primary);
-  margin:    4px 0;
+  display: block;
 }
 
 // ── Hint overlay ──────────────────────────────────────────────────────
 .curtain__hint {
-  z-index: 4;
+  z-index: 10;
   pointer-events: none;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .hint-ring {
-  width:  52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
 }
 
 .hint-ring__outer {
-  width:     52px;
-  height:    52px;
-  border:    1px solid rgba(250, 230, 200, 0.45);
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(250, 230, 200, 0.5);
   animation: ring-pulse 2s ease-in-out infinite;
 }
 
 .hint-ring__inner {
-  width:      40px;
-  height:     40px;
-  background: rgba(250, 230, 200, 0.15);
-  border:     1px solid rgba(250, 230, 200, 0.35);
-  position:   relative;
-  z-index:    1;
+  width: 44px;
+  height: 44px;
+  background: rgba(250, 230, 200, 0.2);
+  border: 1px solid rgba(250, 230, 200, 0.4);
+  position: relative;
+  z-index: 1;
 }
 
 .hint-label {
-  font-family:    var(--font-sans);
-  font-size:      12px;
-  letter-spacing: .12em;
-  color:          rgba(250, 230, 200, 0.75);
-  margin:         0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #faf8f5;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes ring-pulse {
-  0%, 100% { transform: scale(1);    opacity: .5; }
-  50%       { transform: scale(1.45); opacity: 1;  }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
 }

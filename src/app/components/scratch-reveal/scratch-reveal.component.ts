@@ -31,44 +31,26 @@ export class ScratchRevealComponent implements AfterViewInit {
     setTimeout(() => this.initCanvases(), 0);
   }
 
-  // ── Canvas init — draw scratch-gold.png instead of gradient ─────────
   private initCanvases(): void {
-    this.canvasRefs.forEach((ref) => this.paintGoldImage(ref.nativeElement));
+    this.canvasRefs.forEach((ref) => this.paintGoldGradient(ref.nativeElement));
   }
 
-  private paintGoldImage(canvas: HTMLCanvasElement): void {
+  private paintGoldGradient(canvas: HTMLCanvasElement): void {
     const ctx = canvas.getContext('2d')!;
-    const img = new Image();
-    img.src = 'assets/scratch-gold.png';
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+    const r = canvas.width / 2 - 2;
 
-    img.onload = () => {
-      // Draw the gold image clipped to the circle shape
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 2, 0, Math.PI * 2);
-      ctx.clip();
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-      ctx.restore();
+    const grad = ctx.createRadialGradient(cx - r * 0.3, cy - r * 0.3, r * 0.05, cx, cy, r);
+    grad.addColorStop(0, '#f5e090');
+    grad.addColorStop(0.4, '#c9a84c');
+    grad.addColorStop(1, '#8a6010');
 
-      // Switch to erase mode for scratching
-      ctx.globalCompositeOperation = 'destination-out';
-    };
-
-    img.onerror = () => {
-      // Fallback to gold gradient if image fails to load
-      const cx = canvas.width / 2,
-        cy = canvas.height / 2,
-        r = canvas.width / 2 - 2;
-      const grad = ctx.createRadialGradient(cx - r * 0.3, cy - r * 0.3, r * 0.05, cx, cy, r);
-      grad.addColorStop(0, '#f5e090');
-      grad.addColorStop(0.4, '#c9a84c');
-      grad.addColorStop(1, '#8a6010');
-      ctx.beginPath();
-      ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.fillStyle = grad;
-      ctx.fill();
-      ctx.globalCompositeOperation = 'destination-out';
-    };
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.fillStyle = grad;
+    ctx.fill();
+    ctx.globalCompositeOperation = 'destination-out';
   }
 
   // ── Mouse events ─────────────────────────────────────────────────────

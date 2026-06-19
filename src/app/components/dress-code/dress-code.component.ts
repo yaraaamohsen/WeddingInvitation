@@ -30,10 +30,6 @@ import { Component } from '@angular/core';
       >
         Formal Attire
       </p>
-
-      <p class="font-serif fst-italic animate__animated animate__fadeInUp" style="font-size:22px; color:var(--color-primary);">
-        Please avoid wearing white
-      </p>
     </section>
   `,
 })

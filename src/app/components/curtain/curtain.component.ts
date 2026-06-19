@@ -1,5 +1,4 @@
-import { Component, output, signal, AfterViewInit, ViewChild, ElementRef, input } from '@angular/core';
-import { WeddingConfig } from '../../models/wedding';
+import { Component, output, signal, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-curtain',
@@ -8,28 +7,36 @@ import { WeddingConfig } from '../../models/wedding';
   styleUrl: './curtain.component.scss',
 })
 export class CurtainComponent implements AfterViewInit {
-  videoStarted = output<void>(); // ← fires when video starts → names fade in
-  curtainDone = output<void>(); // ← fires when video ends  → phase switches
-
-  isPlaying = signal(false);
+  curtainState = signal<'idle' | 'playing' | 'done'>('idle');
+  curtainDone = output<void>();
 
   @ViewChild('curtainVideo')
   videoRef!: ElementRef<HTMLVideoElement>;
 
   ngAfterViewInit(): void {
     const video = this.videoRef.nativeElement;
-    video.addEventListener('ended', () => this.curtainDone.emit());
-    video.addEventListener('error', () => {
-      setTimeout(() => this.curtainDone.emit(), 500);
+    
+    // Ensure we are on the first frame
+    video.currentTime = 0;
+    video.pause();
+
+    video.addEventListener('ended', () => {
+      this.curtainState.set('done');
+      this.curtainDone.emit();
+      // Keep it on the last frame
+      video.pause();
     });
   }
 
   startExperience(): void {
-    if (this.isPlaying()) return;
-    this.isPlaying.set(true);
-    this.videoStarted.emit(); // notify app → show names
-    this.videoRef.nativeElement.play();
+    if (this.curtainState() !== 'idle') return;
+    
+    this.curtainState.set('playing');
+    this.videoRef.nativeElement.play().catch(err => {
+      console.warn('Video play failed, likely requires user interaction:', err);
+    });
 
+    // Optional: Music can be started here or in the parent
     const audio = new Audio('assets/intro-music.mp3');
     audio.loop = true;
     audio.play().catch((e) => console.error('Audio play failed:', e));

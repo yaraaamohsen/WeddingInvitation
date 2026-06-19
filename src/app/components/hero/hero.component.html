@@ -1,19 +1,29 @@
-<section class="hero position-relative vh-100 w-100 overflow-hidden">
-  <!-- ① Background — open curtain image -->
-  <img src="assets/curtain-open.jpg" alt="" class="hero__bg position-absolute top-0 start-0 w-100 h-100" />
-
-  <!-- ② Body text + scroll arrow pinned to bottom -->
-  <div class="hero__overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-end px-4 pb-5">
-    <p class="hero__body text-uppercase text-center mb-4 animate__animated animate__fadeIn animate__delay-1s">
-      We would like to invite you to celebrate with us the most special day of our lives. It would be an honor to have you present at this important
-      moment.
+<section class="hero-overlay fixed-top w-100 vh-100 d-flex flex-column align-items-center justify-content-center text-center px-4">
+  <div class="hero-content">
+    <p class="welcome-text text-uppercase mb-4 animate-fade-in-up">
+      Welcome to <br />
+      the Wedding
     </p>
 
-    <div class="d-flex flex-column align-items-center w-100 animate__animated animate__fadeInUp animate__infinite animate__slow">
-      <p class="hero__scroll-label text-uppercase mb-2">Scroll</p>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5C2018" stroke-width="1.5">
-        <path d="M12 5v14M5 12l7 7 7-7" />
-      </svg>
+    <div class="names-container mb-4">
+      <h1 class="groom-name font-serif animate-fade-in" style="animation-delay: 0.5s">
+        {{ config().groomName }}
+      </h1>
+      <span class="ampersand font-serif animate-fade-in" style="animation-delay: 0.8s">&</span>
+      <h1 class="bride-name font-serif animate-fade-in" style="animation-delay: 1.1s">
+        {{ config().brideName }}
+      </h1>
     </div>
+
+    <p class="invitation-sentence animate-fade-in-up" style="animation-delay: 1.5s">
+      We invite you to celebrate <br />
+      our love and the beginning of our new life together.
+    </p>
+  </div>
+
+  <!-- Scroll Hint - only shows after intro animations -->
+  <div class="scroll-hint position-absolute bottom-0 mb-5 animate-fade-in" style="animation-delay: 2.5s">
+    <p class="text-uppercase small ls-2 mb-2">Scroll to discover</p>
+    <div class="scroll-line"></div>
   </div>
 </section>

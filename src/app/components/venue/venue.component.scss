@@ -1,0 +1,26 @@
+.venue-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+
+  .ornament-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  }
+
+  .ornament-icon {
+    opacity: 0.8;
+  }
+}
+
+.date-badge {
+  border-top: 1px solid rgba(92, 32, 24, 0.1);
+  border-bottom: 1px solid rgba(92, 32, 24, 0.1);
+  padding: 15px 0;
+  width: 100%;
+  max-width: 300px;
+}

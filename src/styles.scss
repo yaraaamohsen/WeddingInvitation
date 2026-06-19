@@ -16,8 +16,9 @@
 
 body {
   font-family: var(--font-sans);
-  background: var(--color-beige);
+  background: #000; // Black background for the video
   overflow-x: hidden;
+  margin: 0;
 }
 
 /* ── Helpers ── */
@@ -25,6 +26,15 @@ body {
 .bg-beige          { background-color: var(--color-beige) !important; }
 .text-primary-w    { color: var(--color-primary) !important; }
 .object-fit-cover  { object-fit: cover; }
+
+/* ── Cinematic Glassmorphism ── */
+.content-section-bg {
+  background: rgba(250, 248, 245, 0.92) !important; 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1);
+}
 
 /* ── RSVP attend buttons ── */
 .btn-attending {
@@ -47,3 +57,7 @@ body {
 
 /* ── Slow down Animate.css infinite pulse for countdown tiles ── */
 .animate__pulse { animation-duration: 2s !important; }
+
+/* ── Typography & Spacing ── */
+.ls-2 { letter-spacing: 0.2em; }
+.ls-3 { letter-spacing: 0.3em; }
