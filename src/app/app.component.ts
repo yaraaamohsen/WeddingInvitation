@@ -16,8 +16,8 @@ export class AppComponent {
   config: WeddingConfig = {
     groomName: 'Selim',
     brideName: 'Yara',
-    weddingDate: new Date('2026-08-22T00:00:00'),
-    dateParts: ['22', 'Aug', '2026'],
+    weddingDate: new Date('2026-010-30T00:00:00'),
+    dateParts: ['30', 'Oct', '2026'],
     venueName: 'NIRENA HALL',
     venueAddress: ['Police Club, Salah Salem'],
     venueCity: 'Salah Salem, Cairo',
