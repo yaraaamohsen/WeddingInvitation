@@ -53,14 +53,6 @@
     letter-spacing: 0.2em;
   }
 
-  .scroll-line {
-    padding-top: 10px;
-    width: 10px;
-    height: 60px;
-    background: linear-gradient(to bottom, var(--color-gold), transparent);
-    animation: scroll-line-move 2s ease-in-out infinite;
-  }
-
   .scroll-arrow {
     color: var(--color-gold);
     animation: scroll-arrow-bounce 2s ease-in-out infinite;
@@ -93,31 +85,12 @@
   }
 }
 
-@keyframes scroll-line-move {
-  0% {
-    transform: scaleY(0);
-    transform-origin: top;
-  }
-  50% {
-    transform: scaleY(1);
-    transform-origin: top;
-  }
-  51% {
-    transform: scaleY(1);
-    transform-origin: bottom;
-  }
-  100% {
-    transform: scaleY(0);
-    transform-origin: bottom;
-  }
-}
-
 @keyframes scroll-arrow-bounce {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
     opacity: 0.5;
   }
+
   50% {
     transform: translateY(6px);
     opacity: 1;
